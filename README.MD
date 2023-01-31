@@ -19,8 +19,8 @@ ENDPOINT = 'https://s3.us-west-004.backblazeb2.com'
 
 
 # Credentials
-KEY_ID = '004b857708fa2f50000000002'
-APPLICATION_KEY = 'K004nKnVqa9Nb3u8q9tTxMQcaeitO5w'
+KEY_ID = 'your key ID'
+APPLICATION_KEY = 'Your Application ID'
 
 # Custom Domains or given b2 friendly url
 # If just domains, you need to write until '/file/', aka, before the bucket name
