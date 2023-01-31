@@ -1,7 +1,7 @@
 
 from botocore.exceptions import ClientError
 
-from connection import *
+# from connection import *
 import os
 import credentials
 
@@ -15,16 +15,16 @@ def download_file(bucket, directory, local_name, key_name, b2):
         print('error', ce)
 
 
-if __name__ == '__main__':
-    conn = connection(credentials.ENDPOINT, credentials.KEY_ID,
-                      credentials.APPLICATION_KEY)
-    b2_resource = conn.get_b2_resource()
+# if __name__ == '__main__':
+#     conn = Connection(credentials.ENDPOINT, credentials.KEY_ID,
+#                       credentials.APPLICATION_KEY)
+#     b2_resource = conn.get_b2_resource()
 
-    LOCAL_DIR = os.getcwd()
-    file = 'test_file.txt'
-    FROM_BUCKET = 'kmoretop-blog'
+#     LOCAL_DIR = os.getcwd()
+#     file = 'test_file.txt'
+#     FROM_BUCKET = 'kmoretop-blog'
 
-    key_name = 'test/'+file  # key_name 需要带bucket中的路径文件夹，xxx/file.xx，头尾不带'/'
+#     key_name = 'test/'+file  # key_name 需要带bucket中的路径文件夹，xxx/file.xx，头尾不带'/'
 
-    download_file(bucket=FROM_BUCKET, directory=LOCAL_DIR,
-                  local_name=file, key_name=key_name, b2=b2_resource)
+#     download_file(bucket=FROM_BUCKET, directory=LOCAL_DIR,
+#                   local_name=file, key_name=key_name, b2=b2_resource)

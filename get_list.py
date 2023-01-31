@@ -1,6 +1,6 @@
 from botocore.exceptions import ClientError
 
-from connection import *
+# from connection import *
 
 
 def list_buckets(b2_client, raw_object=False):
@@ -20,8 +20,8 @@ def list_buckets(b2_client, raw_object=False):
         print('error', ce)
 
 
-if __name__ == '__main__':
-    conn = connection(credentials.ENDPOINT, credentials.KEY_ID,
-                      credentials.APPLICATION_KEY)
-    b2_client = conn.get_b2_client()
-    list_buckets(b2_client=b2_client)
+# if __name__ == '__main__':
+#     conn = Connection(credentials.ENDPOINT, credentials.KEY_ID,
+#                       credentials.APPLICATION_KEY)
+#     b2_client = conn.get_b2_client()
+#     list_buckets(b2_client=b2_client)

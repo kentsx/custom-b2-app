@@ -1,6 +1,6 @@
 from botocore.exceptions import ClientError
 
-from connection import *
+# from connection import *
 from friendly_url import fri_url
 
 
@@ -76,11 +76,10 @@ class Query_URL:
             print('error', ce)
 
 
-# 05 - PRESIGNED URLS
-if __name__ == '__main__':
-    BUCKET_NAME = 'ibd-auto'
-    conn = connection(credentials.ENDPOINT, credentials.KEY_ID,
-                      credentials.APPLICATION_KEY)
-    b2_private = conn.get_b2_resource()
-    URLS = Query_URL(BUCKET_NAME, b2_private)
-    result = URLS.list_objects_browsable_url()
+# if __name__ == '__main__':
+#     BUCKET_NAME = 'ibd-auto'
+#     conn = Connection(credentials.ENDPOINT, credentials.KEY_ID,
+#                       credentials.APPLICATION_KEY)
+#     b2_private = conn.get_b2_resource()
+#     URLS = Query_URL(BUCKET_NAME, b2_private)
+#     result = URLS.list_objects_browsable_url()

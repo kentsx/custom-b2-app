@@ -1,6 +1,6 @@
 from botocore.exceptions import ClientError
 
-from connection import *
+# from connection import *
 from friendly_url import fri_url
 import os
 
@@ -26,14 +26,14 @@ def upload_file(bucket, directory, file, b2, b2path=None):
     return response
 
 
-if __name__ == '__main__':
-    LOCAL_DIR = os.getcwd()
-    file = 'test_file.txt'
-    TARGET_BUCKET = 'kmoretop-blog'
+# if __name__ == '__main__':
+#     LOCAL_DIR = os.getcwd()
+#     file = 'test_file.txt'
+#     TARGET_BUCKET = 'kmoretop-blog'
 
-    conn = connection(credentials.ENDPOINT, credentials.KEY_ID,
-                      credentials.APPLICATION_KEY)
-    b2_resource = conn.get_b2_resource()
-    response = upload_file(TARGET_BUCKET, LOCAL_DIR,
-                           file, b2_resource, 'test')
-    print('RESPONSE:  ', response)
+#     conn = Connection(credentials.ENDPOINT, credentials.KEY_ID,
+#                       credentials.APPLICATION_KEY)
+#     b2_resource = conn.get_b2_resource()
+#     response = upload_file(TARGET_BUCKET, LOCAL_DIR,
+#                            file, b2_resource, 'test')
+#     print('RESPONSE:  ', response)

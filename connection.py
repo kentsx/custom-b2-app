@@ -6,7 +6,7 @@ from botocore.config import Config
 import credentials
 
 
-class connection:
+class Connection:
     def __init__(self, endpoint, keyID, applicationKey):
         self.endpoint = endpoint
         self.keyID = keyID
@@ -34,5 +34,5 @@ class connection:
 
 
 if __name__ == '__main__':
-    conn = connection(credentials.ENDPOINT, credentials.KEY_ID,
+    conn = Connection(credentials.ENDPOINT, credentials.KEY_ID,
                       credentials.APPLICATION_KEY)
