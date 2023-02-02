@@ -5,18 +5,18 @@ import os
 class db_ops:
 
     def __init__(self) -> None:
-        BAES_DIR = os.getcwd()
+        self.BAES_DIR = os.getcwd()
         db_name = 'UserDB'
-        self.db_dir = os.path.join(BAES_DIR, 'GUI', '%s.json') % db_name
+        self.db_dir = os.path.join(self.BAES_DIR, 'GUI', '%s.json') % db_name
         self.db = TinyDB(self.db_dir)
 
     def initiate(self):
         # self.db = TinyDB(self.db_dir)
         self.db.drop_tables()
 
-    def add_user(self, account, key_id, app_key):
+    def add_user(self, account, key_id, app_key, endpoint, custom_url):
         Unique = Query()   # 防止重复数据
-        if account and key_id and app_key:
+        if account and key_id and app_key and endpoint and custom_url:
             is_unique = self.db.search((Unique.account == account) | (
                 Unique.key_id == key_id) | (Unique.app_key == app_key))
             if not is_unique:
@@ -24,7 +24,9 @@ class db_ops:
                 user_info = {
                     'account': account,
                     'key_id': key_id,
-                    'app_key': app_key
+                    'app_key': app_key,
+                    'endpoint': endpoint,
+                    'custom_url': custom_url
                 }
                 self.db.insert(user_info)
             else:
@@ -56,12 +58,17 @@ class db_ops:
         user_list = []
         for i in query_list:
             user_list.append(i['account'])
-        print(user_list)
+        # print(user_list)
         return user_list
+
+    # def write_to_credentials(self):
+    #     with open('credentials.py', 'r') as f:
+    #         f.readlines()
 
 
 if __name__ == '__main__':
     db = db_ops()
+    # db.write_to_credentials()
     db.initiate()
     # db.add_user('kent3', '123456332123', 'ufafjasfj231kaljf21')
     # x = db.query_users()

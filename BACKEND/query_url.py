@@ -47,7 +47,7 @@ class Query_URL:
 
     # List browsable URLs of the objects in the specified bucket - Useful for *PUBLIC* buckets
 
-    def list_objects_browsable_url(self):
+    def list_objects_browsable_url(self, custom_url):
         try:
             # 获取到文件的路径的list（也就是key）
             bucket_object_keys = self.list_object_keys()
@@ -63,7 +63,7 @@ class Query_URL:
                 for key in bucket_object_keys:  # iterate bucket_objects
                     # format and concatenate strings as valid url
                     # url = "%s/%s/%s" % (endpoint, bucket, key)
-                    url = fri_url(self.bucket, key)  # friendly url
+                    url = fri_url(self.bucket, key, custom_url)  # friendly url
                     # for each item in bucket_objects append value of 'url' to list
                     return_list.append(url)
 

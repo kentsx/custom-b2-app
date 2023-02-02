@@ -3,7 +3,7 @@ from botocore.exceptions import ClientError
 
 # from connection import *
 import os
-import credentials
+# import credentials
 
 
 # Download the specified object from B2 and write to local file system

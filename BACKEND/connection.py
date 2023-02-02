@@ -3,7 +3,7 @@ from botocore.config import Config
 
 
 # 个人信息
-import credentials
+# import credentials
 
 
 class Connection:
@@ -11,6 +11,7 @@ class Connection:
         self.endpoint = endpoint
         self.keyID = keyID
         self.applicationKey = applicationKey
+        # self.custom_url = custom_url
 # Return a boto3 client object for B2 service
 
     def get_b2_client(self):
@@ -33,6 +34,6 @@ class Connection:
         return b2_resource
 
 
-if __name__ == '__main__':
-    conn = Connection(credentials.ENDPOINT, credentials.KEY_ID,
-                      credentials.APPLICATION_KEY)
+# if __name__ == '__main__':
+#     conn = Connection(credentials.ENDPOINT, credentials.KEY_ID,
+#                       credentials.APPLICATION_KEY)
