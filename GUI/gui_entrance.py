@@ -1,9 +1,11 @@
 import tkinter as tk
+import tkinter.messagebox as msgbox
+
+# 自己构建的模块
 import login_add_user as la
 import upload_file as up
 import download_file as dof
 import create_bucket as cb
-import tkinter.messagebox as msgbox
 
 from user_info_db import db_ops
 
